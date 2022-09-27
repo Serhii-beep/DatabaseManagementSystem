@@ -1,1 +1,2 @@
 # DatabaseManagementSystem
+## Діаграма прецедентів
