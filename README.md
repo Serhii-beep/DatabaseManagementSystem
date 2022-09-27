@@ -1,5 +1,6 @@
 # DatabaseManagementSystem
 ## Діаграма прецедентів
-![Alt text](img/UseCase0.png?raw=true)
+![Alt text](./img/UseCase0.png?raw=true)
 
-[a relative link](docs/README1.md)
+## Посилання на етапи
+[Використання UML при проектуванні та специфікації програмних систем](docs/README1.md)
