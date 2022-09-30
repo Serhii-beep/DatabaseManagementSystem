@@ -51,3 +51,7 @@ A3. Назва таблиці введена некоректно
 
 ## Діаграма класів
 ![Alt text](../img/ClassDiagram1.png?raw=true)
+
+
+## VOPC-діаграма для прецедента "Переглянути перетин таблиць"
+![Alt text](../img/VOPCDiagram.png?raw=true)
