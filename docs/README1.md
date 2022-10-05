@@ -55,3 +55,18 @@ A3. Назва таблиці введена некоректно
 
 ## VOPC-діаграма для прецедента "Переглянути перетин таблиць"
 ![Alt text](../img/VOPCDiagram.png?raw=true)
+
+
+## Діаграми взаємодії
+
+### Create database
+![Alt text](../img/Interact1.png)
+
+### Load database
+![Alt text](../img/Interac2.png)
+
+### Table intersection
+![Alt text](../img/Interac3.png)
+
+### Add table
+![Alt text](../img/Interac4.png)
