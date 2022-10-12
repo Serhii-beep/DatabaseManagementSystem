@@ -5,9 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DatabaseManagementSystem.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
         <DataGrid Loaded="DataGrid_Loaded" Margin="220,0,0,0"/>
+        <DockPanel HorizontalAlignment="Left" Height="240" LastChildFill="False" Margin="10,71,0,0" VerticalAlignment="Top" Width="205">
+            <ListBox x:Name="TablesListBox" ItemsSource="{Binding}" DisplayMemberPath="Name" Height="240" Width="205"/>
+        </DockPanel>
+        <Button x:Name="BtnSave" Content="Save" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <Button x:Name="BtnLoad" Content="Load" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <Button x:Name="BtnCreateDb" Content="Create database" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnCreateDb_Click"/>
+        <Button x:Name="BtnDeleteDb" Content="Delete database" HorizontalAlignment="Left" Margin="115,316,0,0" VerticalAlignment="Top" Height="32" Width="100"/>
+        <Button x:Name="BtnAddTable" Content="Add table" HorizontalAlignment="Left" Margin="10,353,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnAddTable_Click" />
+        <Button x:Name="BtnDeleteTable" Content="Delete table" HorizontalAlignment="Left" Margin="115,354,0,0" VerticalAlignment="Top" Height="32" Width="100"/>
+        <Button x:Name="BtnAddField" Content="Add field" HorizontalAlignment="Left" Height="32" Margin="10,390,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="BtnDeleteField" Content="Delete field" HorizontalAlignment="Left" Margin="115,391,0,0" VerticalAlignment="Top" Height="32" Width="100"/>
+        <Label x:Name="LblDatabaseName" Content="" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="205"/>
 
     </Grid>
 </Window>

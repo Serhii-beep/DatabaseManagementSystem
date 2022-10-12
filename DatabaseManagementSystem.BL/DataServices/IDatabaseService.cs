@@ -5,6 +5,7 @@ namespace DatabaseManagementSystem.BL.DataServices
 {
     public interface IDatabaseService
     {
+        Database Database { get; set; }
         void AddTable(string tableName);
         void DeleteTable(string tableName);
         void AddField(string tableName, Field field);
