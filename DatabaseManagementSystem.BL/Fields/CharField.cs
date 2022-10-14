@@ -8,7 +8,7 @@
             DefaultValue = String.Empty;
         }
 
-        public static bool IsValid(string value)
+        public override bool IsValid(string value)
         {
             return char.TryParse(value, out _);
         }

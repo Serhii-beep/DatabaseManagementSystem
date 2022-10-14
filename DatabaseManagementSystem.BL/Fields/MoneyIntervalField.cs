@@ -8,14 +8,15 @@
             DefaultValue = "($0, $1)";
         }
 
-        public static bool IsValid(string value)
+        public override bool IsValid(string value)
         {
             if((value[0] != '(' && value[0] != '[') || (value[^1] != ')' && value[^1] != ']') || (value[0] != value[^1]))
             {
                 return false;
             }
             string[] parts = value[1..^1].Replace(" ", "").Split(',');
-            return MoneyField.IsValid(parts[0]) && MoneyField.IsValid(parts[1]);
+            MoneyField mf = new MoneyField("t");
+            return mf.IsValid(parts[0]) && mf.IsValid(parts[1]);
         }
 
 

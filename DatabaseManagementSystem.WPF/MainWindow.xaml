@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Grid>
-        <DataGrid Loaded="DataGrid_Loaded" Margin="220,0,0,0"/>
+        <DataGrid x:Name="TableDataGrid" Loaded="DataGrid_Loaded" Margin="220,0,0,0" />
         <DockPanel HorizontalAlignment="Left" Height="240" LastChildFill="False" Margin="10,71,0,0" VerticalAlignment="Top" Width="205">
             <ListBox x:Name="TablesListBox" ItemsSource="{Binding}" DisplayMemberPath="Name" Height="240" Width="205"/>
         </DockPanel>
-        <Button x:Name="BtnSave" Content="Save" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
-        <Button x:Name="BtnLoad" Content="Load" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Height="30" Width="100"/>
+        <Button x:Name="BtnSave" Content="Save" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="BtnSave_Click" />
+        <Button x:Name="BtnLoad" Content="Load" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="BtnLoad_Click" />
         <Button x:Name="BtnCreateDb" Content="Create database" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnCreateDb_Click"/>
         <Button x:Name="BtnDeleteDb" Content="Delete database" HorizontalAlignment="Left" Margin="115,316,0,0" VerticalAlignment="Top" Height="32" Width="100"/>
         <Button x:Name="BtnAddTable" Content="Add table" HorizontalAlignment="Left" Margin="10,353,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnAddTable_Click" />

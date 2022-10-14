@@ -8,7 +8,7 @@
             DefaultValue = "0.0";
         }
 
-        public static bool IsValid(string value)
+        public override bool IsValid(string value)
         {
             return double.TryParse(value, out _);
         }

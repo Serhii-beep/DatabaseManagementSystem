@@ -28,7 +28,7 @@ namespace DatabaseManagementSystem.BL.FileManagers
         {
             if(GetAllDatabaseNames().Any(n => n.ToLower() == database.Name.ToLower()))
             {
-                throw new ArgumentException("Database with such name already exists");
+                //throw new ArgumentException("Database with such name already exists");
             }
             string databaseSerialized = JsonConvert.SerializeObject(database);
             using var sw = new StreamWriter(BuildPath(database.Name));

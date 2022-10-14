@@ -9,5 +9,6 @@
         {
             Name = name;
         }
+        public abstract bool IsValid(string value);
     }
 }

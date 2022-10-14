@@ -15,15 +15,7 @@ namespace DatabaseManagementSystem.BL.DataServices
             {
                 throw new Exception($"Table {tableName} does not exist");
             }
-            if(t.Fields.Any(f => f.Name == field.Name))
-            {
-                throw new Exception($"Field {field.Name} already exists");
-            }
-            t.Fields.Add(field);
-            foreach(var row in t.Rows)
-            {
-                row.Values.Add(field.DefaultValue);
-            }
+            t.AddField(field);
         }
 
         public void AddTable(string tableName)
@@ -42,17 +34,7 @@ namespace DatabaseManagementSystem.BL.DataServices
             {
                 throw new Exception($"Table {tableName} does not exist");
             }
-            Field field= table.Fields.FirstOrDefault(f => f.Name == fieldName);
-            if(field == null)
-            {
-                throw new Exception($"Field {fieldName} does not exist");
-            }
-            int ind = table.Fields.IndexOf(field);
-            table.Fields.Remove(field);
-            foreach(var row in table.Rows)
-            {
-                row.Values.RemoveAt(ind);
-            }
+            table.DeleteField(fieldName);
         }
 
         public void DeleteTable(string tableName)

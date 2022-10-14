@@ -33,6 +33,7 @@ namespace DatabaseManagementSystem.WPF
             _databaseFileManager = databaseFileManager;
             ToggleButtonsDatabaseStatusChanged();
             ToggleButtonsTableStatusChanged();
+            TableDataGrid.CanUserReorderColumns = false;
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -78,8 +79,57 @@ namespace DatabaseManagementSystem.WPF
             if(dialog.ShowDialog() == true)
             {
                 string tableName = dialog.ResposneText;
-
+                try
+                {
+                    _databaseService.AddTable(tableName);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
             }
+        }
+
+        private void BtnLoad_Click(object sender, RoutedEventArgs e)
+        {
+            SelectInputDialog dialog = new SelectInputDialog(_databaseFileManager.GetAllDatabaseNames());
+            if(dialog.ShowDialog() == true)
+            {
+                string databasename = dialog.SelectedDatabaseName;
+                var isDbNull = _databaseService.Database == null;
+                try
+                {
+                    _databaseService.Database = _databaseFileManager.LoadDatabase(databasename);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+                if((isDbNull && _databaseService.Database != null) || (!isDbNull && _databaseService.Database == null))
+                {
+                    ToggleButtonsDatabaseStatusChanged();
+                }
+                LblDatabaseName.Content = _databaseService.Database?.Name;
+                TablesListBox.DataContext = _databaseService.Database?.Tables;
+            }
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            if(_databaseService.Database == null)
+                return;
+            try
+            {
+                _databaseFileManager.SaveDatabase(_databaseService.Database);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            MessageBox.Show("Successfully saved");
         }
     }
 

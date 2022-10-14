@@ -7,5 +7,7 @@ namespace DatabaseManagementSystem.BL.FileManagers
         void SaveDatabase(Database database);
 
         Database LoadDatabase(string databaseName);
+
+        List<string> GetAllDatabaseNames();
     }
 }

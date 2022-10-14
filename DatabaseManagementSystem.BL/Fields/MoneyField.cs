@@ -8,7 +8,7 @@
             DefaultValue = "$0.00";
         }
 
-        public static bool IsValid(string value)
+        public override bool IsValid(string value)
         {
             if(value[0] != '$')
                 return false;
