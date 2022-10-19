@@ -1,5 +1,9 @@
-﻿namespace DatabaseManagementSystem.BL.Fields
+﻿using DatabaseManagementSystem.BL.JsonHelpers;
+using Newtonsoft.Json;
+
+namespace DatabaseManagementSystem.BL.Fields
 {
+    [JsonConverter(typeof(FieldConverter))]
     public abstract class Field
     {
         public string Type { get; protected set; }

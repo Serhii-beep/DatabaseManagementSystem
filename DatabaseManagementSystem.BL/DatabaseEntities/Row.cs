@@ -1,4 +1,6 @@
-﻿namespace DatabaseManagementSystem.BL.DatabaseEntities
+﻿using System.Collections.ObjectModel;
+
+namespace DatabaseManagementSystem.BL.DatabaseEntities
 {
     public class Row
     {

@@ -26,13 +26,21 @@ namespace DatabaseManagementSystem.BL.FileManagers
 
         public void SaveDatabase(Database database)
         {
-            if(GetAllDatabaseNames().Any(n => n.ToLower() == database.Name.ToLower()))
-            {
-                //throw new ArgumentException("Database with such name already exists");
-            }
             string databaseSerialized = JsonConvert.SerializeObject(database);
             using var sw = new StreamWriter(BuildPath(database.Name));
             sw.Write(databaseSerialized);
+        }
+
+        public void DeleteDatabase(string databaseName)
+        {
+            if(File.Exists(BuildPath(databaseName)))
+            {
+                File.Delete(BuildPath(databaseName));
+            }
+            else
+            {
+                throw new Exception($"No database with name {databaseName}");
+            }
         }
 
         public List<string> GetAllDatabaseNames()

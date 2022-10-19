@@ -10,7 +10,7 @@
 
         public override bool IsValid(string value)
         {
-            if((value[0] != '(' && value[0] != '[') || (value[^1] != ')' && value[^1] != ']') || (value[0] != value[^1]))
+            if(string.IsNullOrEmpty(value) || (value[0] != '(' && value[0] != '[') || (value[^1] != ')' && value[^1] != ']'))
             {
                 return false;
             }

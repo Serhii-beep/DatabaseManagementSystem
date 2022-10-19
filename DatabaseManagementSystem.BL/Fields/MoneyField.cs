@@ -10,7 +10,7 @@
 
         public override bool IsValid(string value)
         {
-            if(value[0] != '$')
+            if(string.IsNullOrEmpty(value) || value[0] != '$')
                 return false;
             if(value.Contains('.'))
             {

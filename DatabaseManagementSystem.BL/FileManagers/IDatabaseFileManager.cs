@@ -6,6 +6,8 @@ namespace DatabaseManagementSystem.BL.FileManagers
     {
         void SaveDatabase(Database database);
 
+        void DeleteDatabase(string databaseName);
+
         Database LoadDatabase(string databaseName);
 
         List<string> GetAllDatabaseNames();

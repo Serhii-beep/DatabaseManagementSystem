@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DatabaseManagementSystem.WPF"
         mc:Ignorable="d"
-        Title="SelectInputDialog" Height="200" Width="300">
+        Title="SelectInputDialog" Height="200" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel VerticalAlignment="Center">
             <ListBox x:Name="ListBoxDatabases" Height="100" Width="199" ItemsSource="{Binding}">

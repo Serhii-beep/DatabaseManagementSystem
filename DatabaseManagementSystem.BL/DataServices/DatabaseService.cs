@@ -8,8 +8,33 @@ namespace DatabaseManagementSystem.BL.DataServices
     {
         public Database Database { get; set; }
 
-        public void AddField(string tableName, Field field)
+        public void AddField(string tableName, string fieldName, string type)
         {
+            Field field;
+            switch(type)
+            {
+                case "Integer":
+                    field = new IntegerField(fieldName);
+                    break;
+                case "Char":
+                    field = new CharField(fieldName);
+                    break;
+                case "Money":
+                    field = new MoneyField(fieldName);
+                    break;
+                case "MoneyInterval":
+                    field = new MoneyIntervalField(fieldName);
+                    break;
+                case "Real":
+                    field = new RealField(fieldName);
+                    break;
+                case "String":
+                    field = new StringField(fieldName);
+                    break;
+                default:
+                    throw new Exception($"Field type {type} does not exist");
+                    return;
+            }
             Table t = Database.Tables.FirstOrDefault(t => t.Name == tableName);
             if(t == null)
             {

@@ -5,21 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DatabaseManagementSystem.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <DataGrid x:Name="TableDataGrid" Loaded="DataGrid_Loaded" Margin="220,0,0,0" />
+        <DataGrid x:Name="TableDataGrid" ItemsSource="{Binding}" Margin="220,0,0,0" CellEditEnding="TableDataGrid_CellEditEnding" KeyUp="TableDataGrid_KeyUp"/>
         <DockPanel HorizontalAlignment="Left" Height="240" LastChildFill="False" Margin="10,71,0,0" VerticalAlignment="Top" Width="205">
-            <ListBox x:Name="TablesListBox" ItemsSource="{Binding}" DisplayMemberPath="Name" Height="240" Width="205"/>
+            <ListBox x:Name="TablesListBox" ItemsSource="{Binding}" DisplayMemberPath="Name" Height="240" Width="205" MouseDoubleClick="TablesListBox_MouseDoubleClick" />
         </DockPanel>
         <Button x:Name="BtnSave" Content="Save" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="BtnSave_Click" />
         <Button x:Name="BtnLoad" Content="Load" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Height="30" Width="100" Click="BtnLoad_Click" />
         <Button x:Name="BtnCreateDb" Content="Create database" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnCreateDb_Click"/>
-        <Button x:Name="BtnDeleteDb" Content="Delete database" HorizontalAlignment="Left" Margin="115,316,0,0" VerticalAlignment="Top" Height="32" Width="100"/>
+        <Button x:Name="BtnDeleteDb" Content="Delete database" HorizontalAlignment="Left" Margin="115,316,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnDeleteDb_Click" />
         <Button x:Name="BtnAddTable" Content="Add table" HorizontalAlignment="Left" Margin="10,353,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnAddTable_Click" />
-        <Button x:Name="BtnDeleteTable" Content="Delete table" HorizontalAlignment="Left" Margin="115,354,0,0" VerticalAlignment="Top" Height="32" Width="100"/>
-        <Button x:Name="BtnAddField" Content="Add field" HorizontalAlignment="Left" Height="32" Margin="10,390,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="BtnDeleteField" Content="Delete field" HorizontalAlignment="Left" Margin="115,391,0,0" VerticalAlignment="Top" Height="32" Width="100"/>
+        <Button x:Name="BtnDeleteTable" Content="Delete table" HorizontalAlignment="Left" Margin="115,354,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnDeleteTable_Click" />
+        <Button x:Name="BtnAddField" Content="Add field" HorizontalAlignment="Left" Height="32" Margin="10,390,0,0" VerticalAlignment="Top" Width="100" Click="BtnAddField_Click" />
+        <Button x:Name="BtnDeleteField" Content="Delete field" HorizontalAlignment="Left" Margin="115,391,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnDeleteField_Click" />
         <Label x:Name="LblDatabaseName" Content="" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="205"/>
+        <Button x:Name="BtnGetIntersection" Content="Get Intersection" HorizontalAlignment="Left" Margin="10,427,0,0" VerticalAlignment="Top" Height="32" Width="100" Click="BtnGetIntersection_Click"/>
+        <Button x:Name="BtnManual" Content="Manual" HorizontalAlignment="Left" Margin="115,428,0,0" VerticalAlignment="Top" Height="31" Width="100" Click="BtnManual_Click" />
 
     </Grid>
 </Window>

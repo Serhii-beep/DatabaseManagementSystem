@@ -1,4 +1,5 @@
 ﻿using DatabaseManagementSystem.BL.Fields;
+using System.Collections.ObjectModel;
 
 namespace DatabaseManagementSystem.BL.DatabaseEntities
 {
@@ -12,12 +13,16 @@ namespace DatabaseManagementSystem.BL.DatabaseEntities
 
         public Table(string name)
         {
+            if(string.IsNullOrEmpty(name))
+            {
+                throw new Exception("Table name must not be empty");
+            }
             Name = name;
             Fields = new List<Field>();
             Rows = new List<Row>();
         }
 
-        public void UpdateRow(List<string> values, int row)
+        public Table UpdateRow(List<string> values, int row)
         {
             if(row < 0)
             {
@@ -30,7 +35,7 @@ namespace DatabaseManagementSystem.BL.DatabaseEntities
             Row newrow;
             for(int i = 0; i < values.Count; i++)
             {
-                if(!Fields[i].IsValid(values[i]))
+                if(!Fields[i].IsValid(values[i]) && (!string.IsNullOrEmpty(values[i]) && Fields[i].Type != "String"))
                 {
                     throw new Exception($"Invalid value {values[i]} for type {Fields[i].Type}");
                 }
@@ -39,12 +44,20 @@ namespace DatabaseManagementSystem.BL.DatabaseEntities
             {
                 newrow = new Row();
                 newrow.Values = values;
+                for(int i = 0; i < newrow.Values.Count; ++i)
+                {
+                    if(string.IsNullOrEmpty(newrow.Values[i]))
+                    {
+                        newrow.Values[i] = Fields[i].DefaultValue;
+                    }
+                }
                 Rows.Add(newrow);
             }
             else
             {
                 Rows[row].Values = values;
             }
+            return this;
         }
 
         public void AddField(Field field)
