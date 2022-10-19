@@ -18,7 +18,5 @@
             MoneyField mf = new MoneyField("t");
             return mf.IsValid(parts[0]) && mf.IsValid(parts[1]);
         }
-
-
     }
 }
