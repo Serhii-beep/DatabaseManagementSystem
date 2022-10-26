@@ -307,7 +307,9 @@ namespace DatabaseManagementSystem.WPF
         private void BtnManual_Click(object sender, RoutedEventArgs e)
         {
             string manualText = "Supported data types:\nChar (ex. a)\nInteger (ex. 1)\nMoney (ex. $4.85)\nMoneyInterval" +
-                " (ex. ($2.30, $3.55))\nReal (ex. 25.5)\nString (ex. abcde)";
+                " (ex. ($2.30,$3.55))\nReal (ex. 25.5)\nString (ex. abcde)\nTo add field you should enter = string in following format\n" +
+                "fieldName:fieldType\n\nTo get tables intersection enter a string in following format\n" +
+                "firstTableName:secondtableName:field1Name:field2Name...";
             MessageBox.Show(manualText);
         }
 
