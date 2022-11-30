@@ -28,3 +28,5 @@
 * [Використання UML при проектуванні та специфікації програмних систем](docs/README1.md)<br>
 * [Розробка локальної версії СКБД](docs/README2.md)
 * [REST web-сервіси](docs/README3.md)
+* [Розробка OpenApi Specification](docs/README3.md)
+* [Asp.Net Web Api](docs/README3.md)

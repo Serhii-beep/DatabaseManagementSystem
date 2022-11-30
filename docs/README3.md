@@ -37,8 +37,8 @@ app.Run();
 ```
 Додамо контролер з Get, Post, Put та Delete запитами до таких сутностей як Database, Table, Field, Row. Також додамо запит для обчислення перетину таблиць.
 Отримуємо сторінку з OpenApi документацією всіх запитів.
-![Alt text](../img/WebApi1)
-![Alt text](../img/WebApi2)
+![Alt text](../img/WebApi1.png)
+![Alt text](../img/WebApi2.png)
 ```C#
 [Route("api/[controller]")]
     [ApiController]
