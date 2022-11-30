@@ -33,4 +33,4 @@
 * [REST web-сервіси. Реалізація серверного проекту, використовуючи кодогенерацію стабу за OpenAPI Specification](docs/README4.md)
 * [REST web-сервіси. Реалізація клієнтського проекту за OpenAPI Specification](docs/README5.md)
 * [SpringBoot](docs/README6.md)
-* [Варіант проекту із використанням MS Sql Server](docs/README6.md)
+* [Варіант проекту із використанням MS Sql Server](docs/README7.md)
