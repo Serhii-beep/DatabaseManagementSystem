@@ -11,7 +11,7 @@ builder.Services.AddDbContext<DBMSDbContext>(options => options.UseSqlServer(bui
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddScoped<IDatabaseService, DatabaseService>();
-builder.Services.AddScoped<IDatabaseFileManager, DatabaseFileManager>();
+builder.Services.AddScoped<IDatabaseFileManager, SqlServerManager>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
