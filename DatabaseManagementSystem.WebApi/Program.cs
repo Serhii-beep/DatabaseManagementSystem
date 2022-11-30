@@ -1,10 +1,13 @@
 using DatabaseManagementSystem.BL.DataServices;
 using DatabaseManagementSystem.BL.FileManagers;
+using DatabaseManagementSystem.WebApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddDbContext<DBMSDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnection")));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddScoped<IDatabaseService, DatabaseService>();

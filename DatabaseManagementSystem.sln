@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseManagementSystem.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseManagementSystem.WPF", "DatabaseManagementSystem.WPF\DatabaseManagementSystem.WPF.csproj", "{B563F1DB-035A-4F77-B2F8-4A633679DB30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseManagementSystem.WebApi", "DatabaseManagementSystem.WebApi\DatabaseManagementSystem.WebApi.csproj", "{B5889BF6-F6A8-4435-BC15-CCC7731D3292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseManagementSystem.WebApi", "DatabaseManagementSystem.WebApi\DatabaseManagementSystem.WebApi.csproj", "{B5889BF6-F6A8-4435-BC15-CCC7731D3292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientGenerated", "ClientGenerated\ClientGenerated.csproj", "{695EABC0-77E0-4834-8CB7-05468F6AD946}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B5889BF6-F6A8-4435-BC15-CCC7731D3292}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5889BF6-F6A8-4435-BC15-CCC7731D3292}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5889BF6-F6A8-4435-BC15-CCC7731D3292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{695EABC0-77E0-4834-8CB7-05468F6AD946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{695EABC0-77E0-4834-8CB7-05468F6AD946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{695EABC0-77E0-4834-8CB7-05468F6AD946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{695EABC0-77E0-4834-8CB7-05468F6AD946}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
