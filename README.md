@@ -30,3 +30,5 @@
 * [REST web-сервіси](docs/README3.md)
 * [Розробка OpenApi Specification](docs/README3.md)
 * [Asp.Net Web Api](docs/README3.md)
+* [REST web-сервіси. Реалізація серверного проекту, використовуючи кодогенерацію стабу за OpenAPI Specification](docs/README4.md)
+* [REST web-сервіси. Реалізація клієнтського проекту за OpenAPI Specification](docs/README5.md)
